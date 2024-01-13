@@ -1,0 +1,6 @@
+com/rustdetector/RustDetectorApplication.class
+com/rustdetector/jobdata/JobData.class
+com/rustdetector/jobdata/JobDataConfig.class
+com/rustdetector/jobdata/JobDataController.class
+com/rustdetector/jobdata/JobDataRepository.class
+com/rustdetector/jobdata/JobDataService.class
