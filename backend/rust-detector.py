@@ -1,7 +1,9 @@
+import os
 import re
 import requests
 import json
 from bs4 import BeautifulSoup
+from requests.auth import HTTPBasicAuth
 
 
 def find_target_pattern(tag, target_pattern):
@@ -37,8 +39,10 @@ def main():
         "pythonCount": python_count,
         "goCount": go_count
     }
+    SPRING_SECURITY_USER = os.environ['SPRING_SECURITY_USER']
+    SPRING_SECURITY_PASS = os.environ['SPRING_SECURITY_PASS']
     headers = {'Content-type': 'application/json'}
-    response = requests.post(url, data=json.dumps(data), headers=headers)
+    response = requests.post(url, auth=HTTPBasicAuth(SPRING_SECURITY_USER, SPRING_SECURITY_PASS), data=json.dumps(data), headers=headers)
 
 
 if __name__ == "__main__":
